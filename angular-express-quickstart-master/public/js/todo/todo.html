@@ -1,0 +1,13 @@
+<h2 class="section_header">{{Todo.title}}</h2>
+<ul class="list-group todo-list">
+    <li class="list-group-item clearfix" ng-repeat="todo in Todo.todos">
+        <todo-editor todo="todo" on-toggle-done="Todo.toggleDone(updated, message)" on-save="Todo.updateTodo(updated)"></todo-editor>        
+    </li>
+</ul>
+<div class="add-new-todo">
+    <div class="form-group">
+    <label class="sr-only" for="tasks">New Task</label>
+    <input type="text" class="form-control" id="tasks" placeholder="새로운 할 일 입력" ng-model="Todo.newContent">
+    </div>
+    <button class="btn btn-sm btn-danger" ng-click="Todo.addTodo(Todo.newContent)">Add Task</button>
+</div>
